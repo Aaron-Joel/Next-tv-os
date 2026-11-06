@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Projekt entpacken
-        run: unzip -q project.zip -d work
+        run: unzip -q "$(find . -name project.zip | head -n 1)" -d work
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
